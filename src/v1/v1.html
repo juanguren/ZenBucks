@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="v1.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <title>ZenBucks</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <a href="../index.html"><img id="logo" src="../assets/Logo.svg" alt=""></a>
+            <h2 id="version-title">Version 1</h2>
+            <button id="btn-modal">Tech Used</button>
+        </header>
+        <section class="ticker-search">
+            <h1>Ticker Search:</h1>
+            <form id="send-ticker">
+                <input id="input-asset" type="text" placeholder="Enter desired asset here" autocomplete="off">
+                <input type="submit" style="display: none;">
+            </form>
+        </section>
+        <div class="ticker-information hidden">
+            <div class="results-container result1">
+                <h2></h2>
+                <h2></h2>
+            </div>
+            <div class="results-container result2">
+                <h2></h2>
+                <h2></h2>
+            </div>
+            <div class="results-container result3">
+                <h2></h2>
+                <h2></h2>
+            </div>
+            <div class="results-container result4">
+                <h2></h2>
+                <h2></h2>
+            </div>
+            <div class="results-container result5">
+                <h2></h2>
+                <h2></h2>
+            </div>
+        </div>
+        <footer>
+            <h4>Made with <span><img src="../assets/bolt-solid.svg" alt=""></span> <i class="fas fa-bolt"></i> by Juan Aranguren</h4>
+        </footer>
+    </div>
+    <script src="../script/v1.js"></script>
+</body>
+</html>

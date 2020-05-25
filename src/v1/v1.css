@@ -1,0 +1,107 @@
+
+:root{
+    --main_font: font-family: 'Manrope', sans-serif;
+    --version_font: font-family: 'Roboto', sans-serif;
+    --version_font_weight: font-weight: 600;
+}
+
+.container{ /* Thank you ZERO! */
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of footer */
+}
+
+header{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    margin-top: 1em;
+}
+
+#logo{
+    margin: 1em 2em;
+    max-width: 130px;
+}
+
+#version-title{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 21px;
+}
+
+#btn-modal{
+    width: fit-content;
+    justify-self: end;
+    padding: 10px 2em;
+    margin-right: 3em;
+    background: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    transition-duration: 0.3s;
+}
+
+#btn-modal:hover{
+    background-color: midnightblue;
+    border: solid silver 2px;
+    color: whitesmoke;
+    transition: background-color 0.5s ease;
+}
+
+/* SECTION Footer --------> Independant file */
+
+.ticker-search{
+    text-align: center;
+    margin-top: 6em;
+    font-family: 'Roboto', sans-serif;
+}
+
+#input-asset{
+    margin-top: 2em;
+    width: 50%;
+    border: solid midnightblue 2px;
+    padding: 1em;
+    font-size: 18px;
+    text-align: center;
+}
+
+#input-asset::placeholder{
+    font-size: 18px;
+}
+
+::-webkit-input-placeholder {
+    font-size: 18px;
+}
+
+/*========= Search Results =========*/
+
+.ticker-information{
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+    gap: 1.5em;
+    margin-top: 3rem;
+    font-size: 15px;
+}
+
+.ticker-information div{
+    border: solid crimson 2px;
+    width: 30%;
+    text-align: center;
+}
+
+.ticker-information .result1{
+    width: 40%;
+}
+
+.results-container{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.hidden{ /* Appendable class */
+    display: none;
+}
