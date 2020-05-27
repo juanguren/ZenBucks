@@ -11,6 +11,8 @@ let searchValue = document.getElementById("input-asset");
 let divContainer = document.getElementById("container");
 let savedTickers = [];
 
+const key = "398aa778137209a478ab10906b372f4f";
+
 searchInput.addEventListener("submit", getTickerResults);
 
 function getTickerResults(e) {
@@ -22,9 +24,10 @@ function getTickerResults(e) {
 }
 
 async function fetchSearchResults(query) {
-    let data = await fetch(`https://financialmodelingprep.com/api/v3/quote/${query}`);
+    let data = await fetch(`https://financialmodelingprep.com/api/v3/quote/${query}?apikey=${key}`);
     let response = await data.json();
     if (data.ok) {
+        console.log(response);
         let objectResponse = response[0];
         appendResults_DOM(objectResponse);
     } else{
@@ -62,12 +65,7 @@ function appendResults_DOM(data) {
         divResult4[3].innerText = dayLow;
 
         divResult5[1].innerText = "Day High:";
-        divResult5[3].innerText = dayHigh;
-
-        let newTicker = new Ticker(name, price, open, dayLow, dayHigh);
-        savedTickers.push(newTicker);
-        console.log(Ticker);       
-        console.log(savedTickers); 
+        divResult5[3].innerText = dayHigh; 
 
     } else{
         console.log("Check your input!");
