@@ -4,7 +4,19 @@
  *  watchify v1.js -o bundle.js -v    
 */
 
-//const Ticker = require("./search_class");
+// ============ Modal ==============
+
+let btnModal = document.getElementById("btn-modal");
+let modal = document.querySelector(".modalv1");
+let modalClose = document.getElementById("btn-close");
+
+btnModal.addEventListener("click", (e) =>{
+    modal.classList.remove("hidden");
+})
+
+modalClose.addEventListener("click", () =>{
+    modal.classList.add("hidden");
+})
 
 let searchInput = document.getElementById("send-ticker");
 let searchValue = document.getElementById("input-asset");
@@ -26,12 +38,15 @@ function getTickerResults(e) {
 async function fetchSearchResults(query) {
     let data = await fetch(`https://financialmodelingprep.com/api/v3/quote/${query}?apikey=${key}`);
     let response = await data.json();
-    if (data.ok) {
+    if (response.length == 0) {
+        console.log("Bad request");
+
+        
+
+    } else{
         console.log(response);
         let objectResponse = response[0];
         appendResults_DOM(objectResponse);
-    } else{
-        console.log("Data wasn´t fetched correctly");
     }
 }
 
@@ -71,9 +86,3 @@ function appendResults_DOM(data) {
         console.log("Check your input!");
     }
 }
-
-let modal = document.getElementById("btn-modal");
-
-modal.addEventListener("click", () =>{
-    
-})
