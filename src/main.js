@@ -11,8 +11,11 @@
                 
  */
 
+ // NOTE --> Soon I´ll find how to make this work
 // beefy (target.js) --live
+/*const tsParticles = require("tsparticles");
 
-const particles = require("tsparticles");
-console.log(particles);
-console.log(4500);
+tsParticles.load("tsparticles", {
+       
+}); */
+
