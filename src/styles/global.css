@@ -13,6 +13,10 @@ footer{
     font-family: 'Roboto', sans-serif;
 }
 
+footer h4 a{
+    text-decoration: none;
+}
+
 footer h4 span img{
     max-width: 20px;
     max-height: 20px;
