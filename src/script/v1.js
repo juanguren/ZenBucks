@@ -40,8 +40,15 @@ async function fetchSearchResults(query) {
     let response = await data.json();
     if (response.length == 0) {
         console.log("Bad request");
-
         
+        let failedMsg = document.getElementById("failure-message");
+        failedMsg.style.position = "fixed";
+        failedMsg.style.color = "crimson";
+        failedMsg.innerText = "Ups, check your query!";
+
+        setTimeout(() => {
+            failedMsg.innerText = "";
+        }, 2500);
 
     } else{
         console.log(response);
