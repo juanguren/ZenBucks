@@ -23,7 +23,7 @@ let searchValue = document.getElementById("input-asset");
 let divContainer = document.getElementById("container");
 let savedTickers = [];
 
-const key = "398aa778137209a478ab10906b372f4f";
+const key = "398aa778137209a478ab10906b372f4f"; // TODO --> Add this to a folder and then to .gitignore
 
 searchInput.addEventListener("submit", getTickerResults);
 
@@ -51,8 +51,8 @@ async function fetchSearchResults(query) {
         }, 2500);
 
     } else{
-        console.log(response);
         let objectResponse = response[0];
+        savedTickers.push(objectResponse);
         appendResults_DOM(objectResponse);
     }
 }
