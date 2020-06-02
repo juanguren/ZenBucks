@@ -57,25 +57,73 @@ header{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    padding: 1em;
 }
 
 .modal-content{
     width: 600px;
-    height: 350px;
+    height: auto;
     background-color: lightsteelblue;
     border-radius: 5px;
-    padding: 1em;
+    text-align: end;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#btn-close{
+    margin: .5em;
+    cursor: pointer;
 }
 
 .content-grid{
-    padding: 5em;
+    padding: 4em;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
 }
 
+.content-grid img{
+    width: 100px;
+    height: auto;
+    justify-self: center;
+}
+
+#js_img{
+    width: 115px;
+    height: auto;
+}
+
+#css_img{
+    height: 100px;
+    width: auto;
+}
+
 .api{
     text-align: center;
+}
+
+.api img{
+    width: 100px;
+}
+
+#api_img{
+    width: 35px;
+    height: auto;
+    position: fixed;
+    bottom: 52.5px;
+    left: 325px;
+}
+
+.api h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+
+.api h4 a{
+    text-decoration: underline;
+    color: inherit;
 }
 
 /* SECTION Footer --------> Independant file */
@@ -111,7 +159,7 @@ header{
     justify-items: center;
     gap: 1.5em;
     margin-top: 3rem;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .ticker-information div{
@@ -131,4 +179,8 @@ header{
 
 .hidden{ /* Appendable class */
     display: none;
+}
+
+.font{
+    font-family: 'Roboto', sans-serif
 }
