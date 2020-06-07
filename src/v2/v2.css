@@ -1,0 +1,38 @@
+
+header{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    margin-top: 1em;
+}
+
+#logo{
+    margin: 1em 2em;
+    max-width: 130px;
+}
+
+#version-title{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 21px;
+}
+
+#btn-modal{
+    width: fit-content;
+    justify-self: end;
+    padding: 10px 2em;
+    margin-right: 3em;
+    background: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    transition-duration: 0.3s;
+}
+
+#btn-modal:hover{
+    background-color: midnightblue;
+    border: solid silver 2px;
+    color: whitesmoke;
+    transition: background-color 0.5s ease;
+}
