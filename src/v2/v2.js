@@ -2,9 +2,11 @@
 let searchForm = document.getElementById("send-ticker");
 let searchInput = document.getElementById("input-asset");
 
+const key = "398aa778137209a478ab10906b372f4f";
+
 searchForm.addEventListener("submit", (e) =>{
     e.preventDefault();
-    const query = searchInput.value;
+    const query = searchInput.value.toUpperCase();
     if (query) {
         getFinancialInfo(query);
         searchInput.value = "";
@@ -14,5 +16,11 @@ searchForm.addEventListener("submit", (e) =>{
 })
 
 getFinancialInfo = (query) =>{
-    console.log(query);
+    fetch(`https://financialmodelingprep.com/api/v3/quote/${query}?apikey=${key}`)
+        .then(data => data.json())
+        .then((res) =>{
+            console.log(...res);
+        })
 }
+
+// ! TODO: Integrate a chart API.
