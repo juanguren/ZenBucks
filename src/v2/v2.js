@@ -24,3 +24,4 @@ getFinancialInfo = (query) =>{
 }
 
 // ! TODO: Integrate a chart API.
+// ? Analize this one: https://css-tricks.com/marketstack-a-market-data-api/
