@@ -3,7 +3,7 @@ let searchForm = document.getElementById("send-ticker");
 let searchInput = document.getElementById("input-asset");
 let chart = document.getElementById("myChart");
 
-const key = "398aa778137209a478ab10906b372f4f";
+const key = "398aa778137209a478ab10906b372f4f"; // ! Learn how to hide API keys
 
 searchForm.addEventListener("submit", (e) =>{
     e.preventDefault();
@@ -17,21 +17,21 @@ searchForm.addEventListener("submit", (e) =>{
 })
 
 getFinancialInfo = (query) =>{
-    fetch(`https://financialmodelingprep.com/api/v3/quote/${query}?apikey=${key}`)
+    fetch(`https://financialmodelingprep.com/api/v3/historical-price-full/${query}?from=2020-01-12&to=2020-09-12&apikey=${key}`)
         .then(data => data.json())
         .then((res) =>{
-            openChart(res[0])
-        })
+            openChart(res)
+        }).catch((e) => console.log(e))
 }
 
-const openChart = (stockData) =>{
+const openChart = (stockData) =>{ // ! Sort array in reverse order. All dates are being returned backwards..
     new Chart(chart, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: stockData.historical.map(all => all.date),
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: stockData.historical.map(all => all.close),
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
