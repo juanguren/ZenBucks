@@ -3,7 +3,12 @@ let searchForm = document.getElementById("send-ticker");
 let searchInput = document.getElementById("input-asset");
 let chart = document.getElementById("myChart");
 
-const key = "398aa778137209a478ab10906b372f4f"; // ! Learn how to hide API keys
+const key = "398aa778137209a478ab10906b372f4f";
+const getToDate = () =>{ return moment().format('YYYY-MM-DD'); }
+const getFromDate = () => { 
+    const date = '2020-01-01';
+    return moment(date);
+}
 
 searchForm.addEventListener("submit", (e) =>{
     e.preventDefault();
@@ -17,7 +22,7 @@ searchForm.addEventListener("submit", (e) =>{
 })
 
 getFinancialInfo = (query) =>{
-    fetch(`https://financialmodelingprep.com/api/v3/historical-price-full/${query}?from=2020-01-12&to=2020-09-12&apikey=${key}`)
+    fetch(`https://financialmodelingprep.com/api/v3/historical-price-full/${query}?from=${getFromDate()}&to=${getToDate()}&apikey=${key}`)
         .then(data => data.json())
         .then((res) =>{
             openChart(res)
