@@ -41,21 +41,20 @@ getFinancialInfo = (query) =>{
     }
 }
 
-const openChart = (stockData, name) =>{ // ! Sort array in reverse order. All dates are being returned backwards.. 
-    // https://www.javatpoint.com/javascript-array-reverse-method#:~:text=The%20JavaScript%20array%20reverse(),first%20element%20becomes%20the%20last.
-    console.log(stockData)
+const openChart = (stockData, tickerName) =>{
+    const orderedInfo = stockData.historical.reverse();
     try {
         new Chart(chart, {
             type: 'line',
             data: {
-                labels: stockData.historical.map(all => all.date),
+                labels: orderedInfo.map(all => all.date),
                 datasets: [{
-                    label: name,
-                    data: stockData.historical.map(all => all.close),
+                    label: tickerName,
+                    data: orderedInfo.map(all => all.close),
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)'
                     ],
-                    borderColor: [
+                    borderColor: [ // ! Take care of colours
                         'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
                         'rgba(255, 206, 86, 1)',
