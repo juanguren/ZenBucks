@@ -31,6 +31,7 @@ getFinancialInfo = (query) =>{
                 fetch(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${key}`)
                 .then(res => res.json())
                 .then((name) => {
+                    if (name == "") { throw alert("Undefinded"); }
                     const { companyName } = name[0];
                     openChart(historics, companyName);
                 })
