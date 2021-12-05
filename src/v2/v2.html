@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="v2.css">
-    <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/normalize.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="v2.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <!-- * Header -->
-        <header>
-            <a href="../index.html"><img id="logo" src="../assets/Logo.svg" alt=""></a>
-            <h2 id="version-title">Version 2</h2>
-            <button id="btn-modal">Tech Used</button>
-        </header>
-        <section class="ticker-search">
-            <form id="send-ticker">
-                <input id="input-asset" type="text" placeholder="Enter desired asset here" autocomplete="off">
-                <input type="submit" style="display: none;">
-            </form>
-        </section>
-        <div class="main">
-            <canvas id="myChart" width="300" height="100"></canvas>
-        </div>
+      <!-- * Header -->
+      <header>
+        <a href="../index.html"
+          ><img id="logo" src="../assets/Logo.svg" alt=""
+        /></a>
+        <h2 id="version-title">Version 2</h2>
+        <button id="btn-modal">Tech Used</button>
+      </header>
+      <section class="ticker-search">
+        <form id="send-ticker">
+          <input
+            id="input-asset"
+            type="text"
+            placeholder="Enter desired asset here"
+            autocomplete="off"
+          />
+          <input type="submit" style="display: none" />
+        </form>
+      </section>
+      <div class="main">
+        <canvas id="myChart" width="300" height="100"></canvas>
+      </div>
     </div>
     <script src="v2.js"></script>
-</body>
+  </body>
 </html>
